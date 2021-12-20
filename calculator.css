@@ -73,7 +73,15 @@ button:focus{
   
 }
 
+button.focus{
+  outline: none;
+}
+
 button:active{
+  box-shadow: none;
+}
+
+button.active{
   box-shadow: none;
 }
 

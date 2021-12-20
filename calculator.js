@@ -55,7 +55,9 @@ let calc = (function () {
     [55, '7'],
     [56, '8'],
     [57, '9'],
-    [48, '0']
+    [48, '0'],
+    [53, 'mod'],
+    [187, 'add']
   ]);
 
   const KeyMapShift = new Map([
@@ -87,6 +89,7 @@ let calc = (function () {
     document.getElementById('clear-entry').addEventListener('click', calculator.clearEntry);
     document.getElementById('pos-neg').addEventListener('click', toggleSign);
     document.addEventListener('keydown', keydownCallback);
+    document.addEventListener('keyup', keyupCallback);
 
   }
   //reset state
@@ -100,14 +103,19 @@ let calc = (function () {
   function keydownCallback (evt) {
     console.log(evt.keyCode);
     // evt.preventDefault();
-    if (evt.shiftKey) {
-      if (KeyMapShift.has(evt.keyCode)) {
-        document.getElementById(KeyMapShift.get(evt.keyCode)).click();
-      } else {
-        return;
-      }
-    } else if (keyMap.has(evt.keyCode)) {
-      document.getElementById(keyMap.get(evt.keyCode)).click();
+    if (keyMap.has(evt.keyCode)) {
+      let button = document.getElementById(keyMap.get(evt.keyCode));
+      button.click();
+      button.classList.add('active');
+      button.classList.add('focus');
+    }
+  }
+
+  function keyupCallback (evt) {
+    let button = document.getElementById(keyMap.get(evt.keyCode));
+    if (button) {
+      button.classList.remove('active');
+      button.classList.remove('focus');
     }
   }
 
