@@ -105,7 +105,6 @@ let calc = (function () {
     // evt.preventDefault();
     if (keyMap.has(evt.keyCode)) {
       let button = document.getElementById(keyMap.get(evt.keyCode));
-      button.click();
       button.classList.add('active');
       button.classList.add('focus');
     }
@@ -116,6 +115,7 @@ let calc = (function () {
     if (button) {
       button.classList.remove('active');
       button.classList.remove('focus');
+      button.click();
     }
   }
 
