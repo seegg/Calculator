@@ -1,0 +1,136 @@
+body{
+  display: flex;
+  justify-content: center;
+}
+
+input#display{
+  background-color: #a9cebd;
+  color:black;
+  width: 6.1em;
+  font-family: 'Play', sans-serif;
+  font-size: 25px;
+  text-align: right;
+  padding-right: 0.2em;
+  padding-left: 0.2em;
+  pointer-events: none;
+}
+
+div#calculator{
+  width: 250px;
+  background-color: #374144;
+  border-radius: 3px;
+  user-select: none;
+  /* box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45); */
+  box-shadow: inset -4px -4px 2px 5px rgba(0, 0, 0, .4), inset 3px 3px 3px 3px #7f989f;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1em;
+  padding-top: 0.5em;
+}
+
+.container{
+  width: fit-content;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px 5px rgb(155, 155, 155);
+}
+
+.display-wrapper{
+  padding: 0.3em;
+  padding-right: 1em;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  border-radius: 3px;
+  background-color: #9facaa;
+  box-shadow: inset 2px 2px 2px #00000066, inset -2px -2px 2px #afc2bf;
+}
+
+button{
+  outline: none;
+  color: darkorange;
+  font-weight: 700;
+  background-color: #40535a;
+  text-align: center;
+  width: 3em;
+  height: 2em;
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 2px 1px #4d646d, inset -2px -2px 2px #00000066;
+  /* box-shadow: inset -1px -1px 2px 1px rgba(0, 0, 0, .4); */
+  
+}
+
+button.number{
+  color: black;
+  background-color: #87949a;
+  box-shadow: inset 1px 1px 2px 1px #9faeb6, inset -2px -2px 2px #00000066;
+}
+
+button:focus{
+  outline: none;
+  /* box-shadow: inset -1px -1px 2px 2px rgba(0, 0, 0, .4); */
+  
+}
+
+button:active{
+  box-shadow: none;
+}
+
+button.empty{
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.row{
+  width: 200px;
+  height: 27px;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  justify-content: space-between;
+}
+
+.clear{
+  background-color: #e6243b;
+  box-shadow: inset 1px 1px 2px 1px #f3586a, inset -2px -2px 2px #00000066;
+  color: white;
+}
+
+.tall-btn{
+  float: right;
+  height: 4.7em;
+}
+
+.three-btn{
+  width: 148px;
+  align-self: flex-start;
+}
+
+.special{
+  width: 93px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.special button{
+  width: 28.5px;
+  font-size: 10px;
+}
+
+
+.title{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.title p{
+  margin: 0px;
+  color: gray;
+}
+
